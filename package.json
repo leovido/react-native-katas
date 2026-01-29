@@ -9,8 +9,11 @@
 		"web": "expo start --web",
 		"test": "jest",
 		"test:exercise:ui-pressable": "jest exercises/01-ui-pressable",
-		"exercise:ui-pressable": "tsx scripts/run-exercise.ts ui-pressable",
-		"exercise:ui-pressable:reset": "tsx scripts/run-exercise.ts ui-pressable reset"
+		"exercise:ui-pressable": "tsx scripts/run-exercise.ts 01-ui-pressable",
+		"exercise:ui-pressable:reset": "tsx scripts/run-exercise.ts 01-ui-pressable reset",
+		"test:exercise:ui-safe-area-scroll": "jest exercises/02-ui-safe-area-scroll",
+		"exercise:ui-safe-area-scroll": "tsx scripts/run-exercise.ts 02-ui-safe-area-scroll",
+		"exercise:ui-safe-area-scroll:reset": "tsx scripts/run-exercise.ts 02-ui-safe-area-scroll reset"
 	},
 	"dependencies": {
 		"@expo/vector-icons": "^15.0.3",
