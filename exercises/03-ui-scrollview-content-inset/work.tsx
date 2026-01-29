@@ -6,7 +6,10 @@ type FeedProps = {
 
 export function Feed({ headerHeight }: FeedProps) {
 	return (
-		<ScrollView contentContainerStyle={{ paddingTop: headerHeight }}>
+		<ScrollView
+			contentInset={{ top: headerHeight }}
+			scrollIndicatorInsets={{ top: headerHeight }}
+		>
 			<View>
 				<Text>Content</Text>
 			</View>
