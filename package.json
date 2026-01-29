@@ -13,7 +13,10 @@
 		"exercise:ui-pressable:reset": "tsx scripts/run-exercise.ts 01-ui-pressable reset",
 		"test:exercise:ui-safe-area-scroll": "jest exercises/02-ui-safe-area-scroll",
 		"exercise:ui-safe-area-scroll": "tsx scripts/run-exercise.ts 02-ui-safe-area-scroll",
-		"exercise:ui-safe-area-scroll:reset": "tsx scripts/run-exercise.ts 02-ui-safe-area-scroll reset"
+		"exercise:ui-safe-area-scroll:reset": "tsx scripts/run-exercise.ts 02-ui-safe-area-scroll reset",
+		"test:exercise:ui-scrollview-content-inset": "jest exercises/03-ui-scrollview-content-inset",
+		"exercise:ui-scrollview-content-inset": "tsx scripts/run-exercise.ts 03-ui-scrollview-content-inset",
+		"exercise:ui-scrollview-content-inset:reset": "tsx scripts/run-exercise.ts 03-ui-scrollview-content-inset reset"
 	},
 	"dependencies": {
 		"@expo/vector-icons": "^15.0.3",
