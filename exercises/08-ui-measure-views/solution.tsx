@@ -11,8 +11,7 @@ export function MeasuredBox({ children }: MeasuredBoxProps) {
 	const [_height, setHeight] = useState<number | undefined>(undefined);
 
 	useLayoutEffect(() => {
-		const rect = ref.current?.getBoundingClientRect?.();
-		if (rect) setHeight(rect.height);
+		// onLayout will handle height measurement
 	}, []);
 
 	const onLayout = (e: LayoutChangeEvent) => {

@@ -1,7 +1,8 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import type React from "react";
 
-declare function HomeScreen(): JSX.Element;
-declare function DetailsScreen(): JSX.Element;
+declare function HomeScreen(): React.JSX.Element;
+declare function DetailsScreen(): React.JSX.Element;
 
 const Stack = createNativeStackNavigator();
 
