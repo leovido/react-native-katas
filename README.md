@@ -1,5 +1,9 @@
 # React Native Katas
 
+[![CI](https://github.com/leovido/react-native-katas/workflows/CI/badge.svg)](https://github.com/leovido/react-native-katas/actions)
+[![codecov](https://codecov.io/gh/leovido/react-native-katas/branch/main/graph/badge.svg)](https://codecov.io/gh/leovido/react-native-katas)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Practice exercises (Katas) for React Native and Expo, aligned with the [Vercel React Native Skills](.agents/skills/vercel-react-native-skills/SKILL.md) Quick Reference. Each Kata has a **problem** (incorrect code), **work** (your edit target), and **solution** (reference implementation), with tests that check `work.tsx` against the rule.
 
 ## Prerequisites
