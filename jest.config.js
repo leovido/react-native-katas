@@ -26,4 +26,12 @@ module.exports = {
 	globals: {
 		TEST_FILE: process.env.TEST_FILE || "solution",
 	},
+	collectCoverageFrom: [
+		"app/**/*.{ts,tsx}",
+		"components/**/*.{ts,tsx}",
+		"exercises/**/*.{ts,tsx}",
+		"!**/*.test.{ts,tsx}",
+		"!**/__tests__/**",
+	],
+	coverageReporters: ["text", "lcov"],
 };
