@@ -13,5 +13,14 @@ export function MeasuredBox({ children }: MeasuredBoxProps) {
 		ref.current?.measure((_x, _y, _w, h) => setHeight(h));
 	}, []);
 
-	return <View ref={ref}>{children}</View>;
+	return (
+		<View
+			ref={ref}
+			onLayout={(layoutEvent) =>
+				layoutEvent.currentTarget.measure((height) => setHeight(height))
+			}
+		>
+			{children}
+		</View>
+	);
 }

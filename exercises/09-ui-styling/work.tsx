@@ -1,10 +1,19 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export function Card() {
 	return (
-		<View style={{ borderRadius: 12, padding: 16 }}>
-			<Text style={{ marginBottom: 8 }}>Title</Text>
-			<Text style={{ marginBottom: 8 }}>Subtitle</Text>
+		<View style={styles.container}>
+			<Text>Title</Text>
+			<Text>Subtitle</Text>
 		</View>
 	);
 }
+
+const styles = StyleSheet.create({
+	container: {
+		borderCurve: "continuous",
+		borderRadius: 12,
+		padding: 16,
+		gap: 8,
+	},
+});

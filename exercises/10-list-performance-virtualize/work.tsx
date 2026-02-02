@@ -1,4 +1,5 @@
-import { ScrollView, Text, View } from "react-native";
+import { FlashList } from "@shopify/flash-list";
+import { Text, View } from "react-native";
 
 type Item = { id: string; title: string };
 
@@ -16,10 +17,9 @@ function ItemCard({ item }: { item: Item }) {
 
 export function Feed({ items }: FeedProps) {
 	return (
-		<ScrollView>
-			{items.map((item) => (
-				<ItemCard key={item.id} item={item} />
-			))}
-		</ScrollView>
+		<FlashList
+			data={items}
+			renderItem={(item) => <ItemCard key={item.index} item={item.item} />}
+		></FlashList>
 	);
 }

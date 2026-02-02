@@ -1,25 +1,22 @@
-import { useRef } from "react";
-import { Button, Text, View } from "react-native";
-
-type BottomSheetRef = { expand: () => void };
-
-declare const BottomSheet: React.ComponentType<{
-	ref?: React.RefObject<BottomSheetRef>;
-	snapPoints: string[];
-	children: React.ReactNode;
-}>;
+import { useState } from "react";
+import { Button, Modal, Text, View } from "react-native";
 
 export function MyScreen() {
-	const sheetRef = useRef<BottomSheetRef>(null);
+	const [visible, setVisible] = useState(false);
 
 	return (
 		<View style={{ flex: 1 }}>
-			<Button onPress={() => sheetRef.current?.expand()} title="Open" />
-			<BottomSheet ref={sheetRef} snapPoints={["50%", "90%"]}>
+			<Button onPress={() => setVisible(true)} title="Open" />
+			<Modal
+				presentationStyle="formSheet"
+				animationType="slide"
+				visible={visible}
+				onRequestClose={() => setVisible(false)}
+			>
 				<View>
 					<Text>Sheet content</Text>
 				</View>
-			</BottomSheet>
+			</Modal>
 		</View>
 	);
 }

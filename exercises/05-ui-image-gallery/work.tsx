@@ -1,24 +1,20 @@
-import { useState } from "react";
-import { Image, Modal, Pressable, StyleSheet } from "react-native";
+import { Galeria } from "@nandorojo/galeria";
+import { Image as ExpoImage } from "expo-image";
+import { StyleSheet } from "react-native";
 
 type ImageGalleryProps = {
 	urls: string[];
 };
 
 export function ImageGallery({ urls }: ImageGalleryProps) {
-	const [selected, setSelected] = useState<string | null>(null);
-
 	return (
-		<>
-			{urls.map((url) => (
-				<Pressable key={url} onPress={() => setSelected(url)}>
-					<Image source={{ uri: url }} style={styles.thumbnail} />
-				</Pressable>
+		<Galeria urls={urls}>
+			{urls.map((url, index) => (
+				<Galeria.Image index={index} key={url}>
+					<ExpoImage source={{ uri: url }} style={styles.thumbnail} />
+				</Galeria.Image>
 			))}
-			<Modal visible={!!selected} onRequestClose={() => setSelected(null)}>
-				<Image source={{ uri: selected ?? "" }} style={styles.fullscreen} />
-			</Modal>
-		</>
+		</Galeria>
 	);
 }
 

@@ -1,24 +1,19 @@
-import { useState } from "react";
-import { Pressable, Text, View } from "react-native";
+import { Pressable, Text } from "react-native";
+import * as DropdownMenu from "zeego/dropdown-menu";
 
 export function MyMenu() {
-	const [open, setOpen] = useState(false);
-
 	return (
-		<View>
-			<Pressable onPress={() => setOpen(!open)}>
-				<Text>Open Menu</Text>
-			</Pressable>
-			{open && (
-				<View style={{ position: "absolute", top: 40 }}>
-					<Pressable onPress={() => console.log("edit")}>
-						<Text>Edit</Text>
-					</Pressable>
-					<Pressable onPress={() => console.log("delete")}>
-						<Text>Delete</Text>
-					</Pressable>
-				</View>
-			)}
-		</View>
+		<DropdownMenu.Root>
+			<DropdownMenu.Trigger>
+				<Pressable>
+					<Text>Open Menu</Text>
+				</Pressable>
+			</DropdownMenu.Trigger>
+			<DropdownMenu.Content>
+				<DropdownMenu.Item key="edit" onSelect={() => console.log("edit")}>
+					<DropdownMenu.ItemTitle>Edit</DropdownMenu.ItemTitle>
+				</DropdownMenu.Item>
+			</DropdownMenu.Content>
+		</DropdownMenu.Root>
 	);
 }

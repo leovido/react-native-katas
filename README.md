@@ -10,21 +10,39 @@ Practice exercises (Katas) for React Native and Expo, aligned with the [Vercel R
 
 ## How to run a Kata
 
-1. **Run tests** for the current `work.tsx`:
-   ```bash
-   pnpm test exercises/NN-<exercise-name>
-   ```
-   Or use the shortcut:
-   ```bash
-   pnpm test:exercise:<rule-id>
-   ```
-   With the initial `work.tsx` (same as `problem.tsx`), tests **fail**.
+### Interactive (recommended)
 
-2. **Edit** `exercises/NN-<exercise-name>/work.tsx` so it satisfies the rule.
+Run from the CLI and pick an exercise; tests run in **watch mode** (re-run when you save `work.tsx`):
 
-3. **Run tests again.** When your implementation matches the rule, tests **pass**.
+```bash
+pnpm run exercise
+```
 
-4. **Compare** with `solution.tsx` in the same folder for a reference implementation.
+Or use the short alias:
+
+```bash
+pnpm e
+```
+
+1. Choose an exercise by number (1–33).
+2. Jest starts in watch mode for that exercise.
+3. Edit `work.tsx`; tests re-run automatically. Press `q` in the terminal to quit watch mode.
+
+### Direct (one-off run)
+
+Run tests once for the current `work.tsx`:
+
+```bash
+pnpm test exercises/NN-<exercise-name>
+```
+
+Or use the shortcut:
+
+```bash
+pnpm test:exercise:<rule-id>
+```
+
+With the initial `work.tsx` (same as `problem.tsx`), tests **fail**. Edit `exercises/NN-<exercise-name>/work.tsx` so it satisfies the rule, then run tests again. When your implementation matches the rule, tests **pass**. Compare with `solution.tsx` in the same folder for a reference implementation.
 
 ## Reset work file
 

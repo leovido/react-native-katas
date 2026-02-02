@@ -1,4 +1,5 @@
-import { Image, StyleSheet } from "react-native";
+import { Image } from "expo-image";
+import { StyleSheet } from "react-native";
 
 type AvatarProps = {
 	url: string;
