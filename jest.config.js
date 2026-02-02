@@ -23,4 +23,7 @@ module.exports = {
 			},
 		],
 	},
+	globals: {
+		TEST_FILE: process.env.TEST_FILE || "solution",
+	},
 };

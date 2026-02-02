@@ -1,14 +1,7 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
+import { readTestFile } from "../../test-utils";
 
-const WORK_FILE = path.resolve(__dirname, "../work.tsx");
-
-function readWorkFile(): string {
-	return fs.readFileSync(WORK_FILE, "utf-8");
-}
-
-describe("list-performance-item-expensive rule (static checks on work.tsx)", () => {
-	const source = readWorkFile();
+describe("list-performance-item-expensive rule", () => {
+	const source = readTestFile(__dirname);
 
 	it("must not use useQuery inside list item", () => {
 		expect(source).not.toMatch(/\buseQuery\b/);

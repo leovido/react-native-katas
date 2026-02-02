@@ -1,14 +1,7 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
+import { readTestFile } from "../../test-utils";
 
-const WORK_FILE = path.resolve(__dirname, "../work.tsx");
-
-function readWorkFile(): string {
-	return fs.readFileSync(WORK_FILE, "utf-8");
-}
-
-describe("ui-scrollview-content-inset rule (static checks on work.tsx)", () => {
-	const source = readWorkFile();
+describe("ui-scrollview-content-inset rule", () => {
+	const source = readTestFile(__dirname);
 
 	it("must use contentInset for dynamic top/bottom spacing", () => {
 		const hasContentInset = /\bcontentInset\s*=\s*\{/.test(source);

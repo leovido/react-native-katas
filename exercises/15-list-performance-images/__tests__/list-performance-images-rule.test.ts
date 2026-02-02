@@ -1,14 +1,7 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
+import { readTestFile } from "../../test-utils";
 
-const WORK_FILE = path.resolve(__dirname, "../work.tsx");
-
-function readWorkFile(): string {
-	return fs.readFileSync(WORK_FILE, "utf-8");
-}
-
-describe("list-performance-images rule (static checks on work.tsx)", () => {
-	const source = readWorkFile();
+describe("list-performance-images rule", () => {
+	const source = readTestFile(__dirname);
 
 	it("must use expo-image or request resized/thumbnail URL", () => {
 		const usesExpoImage = /expo-image|from\s*["']expo-image["']/.test(source);

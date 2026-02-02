@@ -1,14 +1,7 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
+import { readTestFile } from "../../test-utils";
 
-const WORK_FILE = path.resolve(__dirname, "../work.tsx");
-
-function readWorkFile(): string {
-	return fs.readFileSync(WORK_FILE, "utf-8");
-}
-
-describe("react-compiler-destructure-functions rule (static checks on work.tsx)", () => {
-	const source = readWorkFile();
+describe("react-compiler-destructure-functions rule", () => {
+	const source = readTestFile(__dirname);
 
 	it("must destructure onSave from props (not props.onSave)", () => {
 		expect(source).toMatch(/\{\s*onSave\s*\}\s*:\s*SaveButtonProps/);
