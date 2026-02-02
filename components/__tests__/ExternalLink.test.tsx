@@ -1,47 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react-native";
 import { ExternalLink } from "../ExternalLink";
 
-jest.mock("expo-web-browser", () => ({
-	openBrowserAsync: jest.fn().mockResolvedValue({ type: "dismiss" }),
-}));
-
-jest.mock("expo-router", () => ({
-	Link: ({
-		href,
-		onPress,
-		children,
-		testID,
-		...rest
-	}: {
-		href: string;
-		onPress?: (e: { preventDefault: () => void }) => void;
-		children: React.ReactNode;
-		testID?: string;
-	}) => {
-		const React = require("react");
-		const safeEvent = {
-			preventDefault: () => {
-				/* mock no-op */
-			},
-		};
-		return React.createElement(
-			"a",
-			{
-				...rest,
-				href,
-				testID: testID ?? "link",
-				"data-testid": testID ?? "link",
-				onPress: (e: unknown) =>
-					onPress?.(
-						e != null && typeof e === "object" && "preventDefault" in e
-							? (e as { preventDefault: () => void })
-							: safeEvent,
-					),
-			},
-			children,
-		);
-	},
-}));
+jest.mock("expo-web-browser", () => require("./mocks/expo-web-browser").mockExpoWebBrowser());
+jest.mock("expo-router", () => require("./mocks/expo-router").mockExpoRouter());
 
 const WebBrowser = jest.requireMock("expo-web-browser") as {
 	openBrowserAsync: jest.Mock;
