@@ -13,9 +13,8 @@ describe("ui-image-gallery rule (static checks on work.tsx)", () => {
 	it("must use Galeria from @nandorojo/galeria", () => {
 		expect(source).toMatch(/Galeria|@nandorojo\/galeria/);
 		const hasGaleriaImport =
-			/import\s*\{[^}]*Galeria[^}]*\}\s*from\s*["']@nandorojo\/galeria["']/.test(
-				source,
-			) || /from\s*["']@nandorojo\/galeria["']/.test(source);
+			/import\s*\{[^}]*Galeria[^}]*\}\s*from\s*["']@nandorojo\/galeria["']/.test(source) ||
+			/from\s*["']@nandorojo\/galeria["']/.test(source);
 		expect(hasGaleriaImport).toBe(true);
 	});
 

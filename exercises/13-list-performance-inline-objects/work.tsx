@@ -3,11 +3,7 @@ import { Text, View } from "react-native";
 
 type User = { id: string; name: string; avatar: string };
 
-function UserRow({
-	user,
-}: {
-	user: { id: string; name: string; avatar: string };
-}) {
+function UserRow({ user }: { user: { id: string; name: string; avatar: string } }) {
 	return (
 		<View>
 			<Text>{user.name}</Text>

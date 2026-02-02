@@ -3,13 +3,10 @@ import { Text, View } from "react-native";
 
 declare const ThemeContext: React.Context<{ color: string }>;
 declare const UserContext: React.Context<{ name: string }>;
-declare function useQuery<T>(opts: {
-	queryKey: unknown[];
-	queryFn: () => Promise<T>;
-}): { data: T | undefined };
-declare function fetchProduct(
-	id: string,
-): Promise<{ name: string; price: number }>;
+declare function useQuery<T>(opts: { queryKey: unknown[]; queryFn: () => Promise<T> }): {
+	data: T | undefined;
+};
+declare function fetchProduct(id: string): Promise<{ name: string; price: number }>;
 
 type ProductRowProps = {
 	id: string;
@@ -20,12 +17,9 @@ export function ProductRow({ id }: ProductRowProps) {
 		queryKey: ["product", id],
 		queryFn: () => fetchProduct(id),
 	});
-	const theme = useContext(ThemeContext);
-	const user = useContext(UserContext);
-	const recommendations = useMemo(
-		() => (product ? [product.name] : []),
-		[product],
-	);
+	const _theme = useContext(ThemeContext);
+	const _user = useContext(UserContext);
+	const _recommendations = useMemo(() => (product ? [product.name] : []), [product]);
 
 	if (!product) return null;
 	return (

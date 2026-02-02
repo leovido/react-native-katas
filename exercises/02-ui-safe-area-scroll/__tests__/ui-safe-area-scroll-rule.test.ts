@@ -13,9 +13,7 @@ describe("ui-safe-area-scroll rule (static checks on work.tsx)", () => {
 	it("must use contentInsetAdjustmentBehavior on ScrollView with value automatic", () => {
 		const hasContentInset =
 			/contentInsetAdjustmentBehavior\s*=\s*["']automatic["']/.test(source) ||
-			/contentInsetAdjustmentBehavior\s*=\s*\{\s*["']automatic["']\s*\}/.test(
-				source,
-			);
+			/contentInsetAdjustmentBehavior\s*=\s*\{\s*["']automatic["']\s*\}/.test(source);
 		expect(hasContentInset).toBe(true);
 	});
 

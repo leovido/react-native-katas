@@ -5,7 +5,7 @@ import { View } from "react-native";
 type Size = { width: number; height: number };
 
 export function MeasuredView() {
-	const [size, setSize] = useState<Size | undefined>(undefined);
+	const [_size, setSize] = useState<Size | undefined>(undefined);
 
 	const onLayout = (e: LayoutChangeEvent) => {
 		const { width, height } = e.nativeEvent.layout;

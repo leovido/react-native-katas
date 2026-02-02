@@ -16,9 +16,7 @@ describe("ui-scrollview-content-inset rule (static checks on work.tsx)", () => {
 	});
 
 	it("must use scrollIndicatorInsets alongside contentInset", () => {
-		const hasScrollIndicatorInsets = /\bscrollIndicatorInsets\s*=\s*\{/.test(
-			source,
-		);
+		const hasScrollIndicatorInsets = /\bscrollIndicatorInsets\s*=\s*\{/.test(source);
 		expect(hasScrollIndicatorInsets).toBe(true);
 	});
 

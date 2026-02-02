@@ -16,9 +16,7 @@ describe("react-compiler-destructure-functions rule (static checks on work.tsx)"
 	});
 
 	it("must destructure push from useRouter (not router.push)", () => {
-		expect(source).toMatch(
-			/\{\s*push\s*\}\s*=\s*useRouter|push\s*=\s*useRouter/,
-		);
+		expect(source).toMatch(/\{\s*push\s*\}\s*=\s*useRouter|push\s*=\s*useRouter/);
 		expect(source).not.toMatch(/router\.push/);
 	});
 });

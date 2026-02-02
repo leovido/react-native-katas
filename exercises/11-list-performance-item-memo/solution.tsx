@@ -21,12 +21,7 @@ export function UserList({ users }: UserListProps) {
 	return (
 		<>
 			{users.map((user) => (
-				<UserRow
-					key={user.id}
-					id={user.id}
-					name={user.name}
-					email={user.email}
-				/>
+				<UserRow key={user.id} id={user.id} name={user.name} email={user.email} />
 			))}
 		</>
 	);

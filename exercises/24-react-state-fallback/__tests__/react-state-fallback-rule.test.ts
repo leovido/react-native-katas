@@ -11,9 +11,7 @@ describe("react-state-fallback rule (static checks on work.tsx)", () => {
 	const source = readWorkFile();
 
 	it("must use undefined as initial state for user-overridable value", () => {
-		expect(source).toMatch(
-			/useState\s*<\s*boolean\s*\|\s*undefined\s*>\s*\(\s*undefined\s*\)/,
-		);
+		expect(source).toMatch(/useState\s*<\s*boolean\s*\|\s*undefined\s*>\s*\(\s*undefined\s*\)/);
 	});
 
 	it("must use nullish coalescing for fallback to prop", () => {

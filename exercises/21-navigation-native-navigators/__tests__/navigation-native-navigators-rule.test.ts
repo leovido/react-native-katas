@@ -15,8 +15,9 @@ describe("navigation-native-navigators rule (static checks on work.tsx)", () => 
 	});
 
 	it("must use native stack (createNativeStackNavigator or expo-router Stack)", () => {
-		const hasNativeStack =
-			/createNativeStackNavigator|@react-navigation\/native-stack/.test(source);
+		const hasNativeStack = /createNativeStackNavigator|@react-navigation\/native-stack/.test(
+			source,
+		);
 		expect(hasNativeStack).toBe(true);
 	});
 });

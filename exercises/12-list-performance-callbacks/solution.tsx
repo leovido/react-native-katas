@@ -9,13 +9,7 @@ type FeedProps = {
 	onItemPress: (id: string) => void;
 };
 
-function ItemRow({
-	item,
-	onPress,
-}: {
-	item: Item;
-	onPress: (id: string) => void;
-}) {
+function ItemRow({ item, onPress }: { item: Item; onPress: (id: string) => void }) {
 	return (
 		<Pressable onPress={() => onPress(item.id)}>
 			<Text>{item.title}</Text>

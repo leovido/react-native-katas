@@ -12,11 +12,7 @@ export function ProductItem({ product }: ProductItemProps) {
 
 	return (
 		<View>
-			<Image
-				source={{ uri: thumbnailUrl }}
-				style={styles.thumbnail}
-				contentFit="cover"
-			/>
+			<Image source={{ uri: thumbnailUrl }} style={styles.thumbnail} contentFit="cover" />
 			<Text>{product.name}</Text>
 		</View>
 	);

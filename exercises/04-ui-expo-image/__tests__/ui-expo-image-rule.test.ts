@@ -11,9 +11,7 @@ describe("ui-expo-image rule (static checks on work.tsx)", () => {
 	const source = readWorkFile();
 
 	it("must not use Image from react-native", () => {
-		expect(source).not.toMatch(
-			/import\s*\{[^}]*Image[^}]*\}\s*from\s*["']react-native["']/,
-		);
+		expect(source).not.toMatch(/import\s*\{[^}]*Image[^}]*\}\s*from\s*["']react-native["']/);
 	});
 
 	it("must use Image from expo-image", () => {

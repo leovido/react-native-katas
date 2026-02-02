@@ -7,7 +7,7 @@ type MeasuredBoxProps = {
 
 export function MeasuredBox({ children }: MeasuredBoxProps) {
 	const ref = useRef<View>(null);
-	const [height, setHeight] = useState<number | undefined>(undefined);
+	const [_height, setHeight] = useState<number | undefined>(undefined);
 
 	useLayoutEffect(() => {
 		ref.current?.measure((_x, _y, _w, h) => setHeight(h));
@@ -16,9 +16,7 @@ export function MeasuredBox({ children }: MeasuredBoxProps) {
 	return (
 		<View
 			ref={ref}
-			onLayout={(layoutEvent) =>
-				layoutEvent.currentTarget.measure((height) => setHeight(height))
-			}
+			onLayout={(layoutEvent) => layoutEvent.currentTarget.measure((height) => setHeight(height))}
 		>
 			{children}
 		</View>

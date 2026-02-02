@@ -18,8 +18,7 @@ describe("ui-menus rule (static checks on work.tsx)", () => {
 	it("must not use custom open state with absolute positioned menu", () => {
 		// No pattern like: useState for open + position: 'absolute' for menu content
 		const hasCustomAbsoluteMenu =
-			/position\s*:\s*["']absolute["']/.test(source) &&
-			/useState\s*\(\s*(true|false)/.test(source);
+			/position\s*:\s*["']absolute["']/.test(source) && /useState\s*\(\s*(true|false)/.test(source);
 		expect(hasCustomAbsoluteMenu).toBe(false);
 	});
 });

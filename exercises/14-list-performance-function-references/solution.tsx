@@ -17,10 +17,7 @@ function ItemCard({ item }: { item: Item }) {
 }
 
 export function Feed({ items }: FeedProps) {
-	const renderItem = useCallback(
-		({ item }: { item: Item }) => <ItemCard item={item} />,
-		[],
-	);
+	const renderItem = useCallback(({ item }: { item: Item }) => <ItemCard item={item} />, []);
 
 	return (
 		<FlashList

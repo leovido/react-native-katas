@@ -81,9 +81,7 @@ function runJestWatch(exerciseFolder: string): Promise<number> {
 }
 
 function printMenu(exercises: string[]): void {
-	console.log(
-		"\nReact Native Katas – choose an exercise (tests run in watch mode):\n",
-	);
+	console.log("\nReact Native Katas – choose an exercise (tests run in watch mode):\n");
 	for (let i = 0; i < exercises.length; i++) {
 		const ruleId = exercises[i].replace(/^\d+-/, "");
 		console.log(`  ${String(i + 1).padStart(2)}. ${exercises[i]}  (${ruleId})`);
@@ -111,9 +109,7 @@ async function main(): Promise<void> {
 
 		const num = Number.parseInt(raw, 10);
 		if (Number.isNaN(num) || num < 1 || num > max) {
-			console.error(
-				`Invalid choice. Enter a number between 1 and ${max}, or 'q' to quit.`,
-			);
+			console.error(`Invalid choice. Enter a number between 1 and ${max}, or 'q' to quit.`);
 			continue;
 		}
 

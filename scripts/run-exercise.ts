@@ -33,15 +33,11 @@ function main(): void {
 		console.log(`Reset work.tsx from problem.tsx for ${exerciseName}`);
 	}
 
-	const jestResult = spawnSync(
-		"pnpm",
-		["exec", "jest", path.join("exercises", exerciseName)],
-		{
-			cwd: ROOT,
-			stdio: "inherit",
-			shell: true,
-		},
-	);
+	const jestResult = spawnSync("pnpm", ["exec", "jest", path.join("exercises", exerciseName)], {
+		cwd: ROOT,
+		stdio: "inherit",
+		shell: true,
+	});
 
 	process.exit(jestResult.status ?? 1);
 }

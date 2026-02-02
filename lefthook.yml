@@ -1,0 +1,26 @@
+# Lefthook configuration for Git hooks
+# https://github.com/evilmartians/lefthook
+
+# Pre-commit hook - runs on every commit
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "*.{ts,tsx,js,jsx,json}"
+      run: pnpm biome check --write {staged_files}
+      stage_fixed: true
+    format:
+      glob: "*.{ts,tsx,js,jsx,json}"
+      run: pnpm biome format --write {staged_files}
+      stage_fixed: true
+
+# Pre-push hook - runs before pushing to remote
+pre-push:
+  parallel: false
+  commands:
+    typecheck:
+      run: pnpm tsc --noEmit
+    test:
+      run: pnpm test --passWithNoTests
+    lint-all:
+      run: pnpm biome check --write .
