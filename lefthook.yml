@@ -19,8 +19,8 @@ pre-push:
   parallel: false
   commands:
     typecheck:
-      run: pnpm tsc --noEmit
+      run: pnpm typecheck
     test:
-      run: pnpm test --passWithNoTests
+      run: pnpm test:ci
     lint-all:
-      run: pnpm biome check --write .
+      run: pnpm biome check .
