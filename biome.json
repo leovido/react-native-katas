@@ -114,7 +114,20 @@
 	},
 	"overrides": [
 		{
-			"includes": ["*.test.ts", "*.test.tsx", "*.spec.ts", "*.spec.tsx"],
+			"includes": ["**/__tests__/**", "*.test.ts", "*.test.tsx", "*.spec.ts", "*.spec.tsx"],
+			"javascript": {
+				"globals": [
+					"jest",
+					"expect",
+					"describe",
+					"it",
+					"test",
+					"beforeEach",
+					"afterEach",
+					"beforeAll",
+					"afterAll"
+				]
+			},
 			"linter": {
 				"rules": {
 					"suspicious": {
